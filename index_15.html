@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Boulder Tech Companion — Patient, in-person tech help</title>
+<meta name="description" content="Patient, in-person help with phones, computers, and everyday tech for Boulder area seniors and their families.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700;9..144,900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#FFFFFF;
+    --bg-soft:#FFF6E9;
+    --card:#FFFFFF;
+    --ink:#132433;
+    --ink-soft:#3E5163;
+    --coral:#E8543A;
+    --coral-deep:#C23F28;
+    --gold:#F2A61C;
+    --gold-deep:#C9860F;
+    --teal:#0F7A57;
+    --teal-deep:#0A5A40;
+    --line:#E7DFCF;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Inter', -apple-system, sans-serif;
+    font-size:20px;
+    line-height:1.65;
+  }
+  h1,h2,h3{
+    font-family:'Fraunces', serif;
+    font-weight:700;
+    color:var(--ink);
+    line-height:1.1;
+  }
+  a{color:inherit;}
+  .wrap{max-width:960px; margin:0 auto; padding:0 24px;}
+
+  /* Header */
+  header{
+    position:sticky; top:0; z-index:20;
+    background:#FFFFFF;
+    border-bottom:3px solid var(--ink);
+  }
+  header .wrap{
+    display:flex; align-items:center; justify-content:space-between;
+    padding-top:18px; padding-bottom:18px;
+  }
+  .wordmark{
+    font-family:'Fraunces', serif;
+    font-size:28px;
+    font-weight:900;
+    letter-spacing:-0.01em;
+    color:var(--teal-deep);
+  }
+  .wordmark span{color:var(--coral);}
+  .header-phone{
+    font-size:19px;
+    font-weight:800;
+    color:#FFFFFF;
+    background:var(--coral);
+    padding:10px 20px;
+    border-radius:999px;
+    text-decoration:none;
+    white-space:nowrap;
+  }
+
+  /* Hero */
+  .hero{
+    padding:64px 0 56px;
+    background:var(--bg-soft);
+    border-bottom:3px solid var(--ink);
+  }
+  .eyebrow{
+    display:inline-block;
+    font-size:16px;
+    font-weight:800;
+    color:#FFFFFF;
+    background:var(--teal-deep);
+    letter-spacing:0.04em;
+    text-transform:uppercase;
+    padding:7px 16px;
+    border-radius:999px;
+    margin-bottom:22px;
+  }
+  h1{
+    font-size:58px;
+    max-width:11.5em;
+    margin-bottom:24px;
+    color:var(--ink);
+  }
+  h1 .hl{color:var(--coral-deep);}
+  .hero-sub{
+    font-size:22px;
+    font-weight:500;
+    color:var(--ink);
+    max-width:32em;
+    margin-bottom:36px;
+  }
+  .cta-row{display:flex; gap:16px; flex-wrap:wrap;}
+  .btn{
+    display:inline-block;
+    padding:18px 32px;
+    border-radius:10px;
+    font-weight:800;
+    font-size:20px;
+    text-decoration:none;
+    border:3px solid var(--ink);
+    box-shadow:5px 5px 0 var(--ink);
+    transition:transform 0.1s ease, box-shadow 0.1s ease;
+  }
+  .btn:hover{transform:translate(2px,2px); box-shadow:3px 3px 0 var(--ink);}
+  .btn-primary{
+    background:var(--coral);
+    color:#FFFFFF;
+  }
+  .btn-secondary{
+    background:var(--gold);
+    color:var(--ink);
+  }
+  .btn-outline{
+    background:#FFFFFF;
+    color:var(--ink);
+  }
+
+  /* Trust strip */
+  .trust{
+    background:var(--teal-deep);
+    padding:26px 0;
+    border-bottom:3px solid var(--ink);
+  }
+  .trust-inner{
+    display:flex; flex-wrap:wrap; gap:24px; justify-content:space-between;
+  }
+  .trust-item{
+    display:flex; align-items:center; gap:12px;
+    font-size:18px; color:#FFFFFF; font-weight:600;
+    flex:1; min-width:230px;
+  }
+  .trust-check{
+    width:28px; height:28px; border-radius:50%;
+    background:var(--gold);
+    color:var(--ink);
+    flex-shrink:0;
+    display:flex; align-items:center; justify-content:center;
+    font-weight:900; font-size:16px;
+  }
+  .trust-item strong{color:#FFFFFF; font-weight:800;}
+
+  /* Section generic */
+  section{padding:68px 0;}
+  .section-label{
+    display:inline-block;
+    font-size:15px;
+    font-weight:800;
+    color:#FFFFFF;
+    background:var(--coral-deep);
+    text-transform:uppercase;
+    letter-spacing:0.04em;
+    padding:6px 14px;
+    border-radius:6px;
+    margin-bottom:14px;
+  }
+  h2{font-size:38px; margin-bottom:10px;}
+  .section-intro{color:var(--ink-soft); max-width:38em; margin-bottom:36px; font-size:19px; font-weight:500;}
+
+  /* Index card - services */
+  .card{
+    background:var(--card);
+    border:3px solid var(--ink);
+    border-radius:16px;
+    box-shadow:8px 8px 0 var(--gold);
+    overflow:hidden;
+  }
+  .card-tab{
+    background:var(--teal-deep);
+    color:#FFFFFF;
+    font-family:'Fraunces', serif;
+    font-size:19px;
+    font-weight:700;
+    padding:16px 28px;
+    display:flex; align-items:center; justify-content:space-between;
+  }
+  .card-tab span{opacity:0.85; font-family:'Inter',sans-serif; font-size:13px; font-weight:600;}
+  table{width:100%; border-collapse:collapse;}
+  thead th{
+    text-align:left;
+    font-size:13px;
+    text-transform:uppercase;
+    letter-spacing:0.04em;
+    color:var(--ink-soft);
+    font-weight:800;
+    padding:16px 28px 10px;
+  }
+  tbody td{
+    padding:18px 28px;
+    border-top:2px dashed var(--line);
+    font-size:18px;
+    vertical-align:top;
+  }
+  td.service{font-weight:800; width:32%; color:var(--ink);}
+  td.rate{color:var(--coral-deep); font-weight:800; font-size:20px; white-space:nowrap; width:18%;}
+  td.note{color:var(--ink-soft); font-size:16px;}
+  .card-foot{
+    padding:18px 28px 24px;
+    font-size:15px;
+    color:var(--ink-soft);
+    font-weight:600;
+    font-style:italic;
+    border-top:2px dashed var(--line);
+  }
+
+  /* Two column lists */
+  .cols{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+  }
+  ul.plain{list-style:none;}
+  ul.plain li{
+    position:relative;
+    padding-left:32px;
+    margin-bottom:16px;
+    font-size:18px;
+    font-weight:500;
+    color:var(--ink);
+  }
+  ul.plain li::before{
+    content:"✓";
+    position:absolute;
+    left:0; top:0;
+    width:22px; height:22px;
+    border-radius:50%;
+    background:var(--gold);
+    color:var(--ink);
+    font-size:13px;
+    font-weight:900;
+    display:flex; align-items:center; justify-content:center;
+  }
+  ul.plain.teal li::before{background:var(--teal); color:#FFFFFF;}
+
+  /* Testimonials / reviews */
+  .review-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:20px;
+  }
+  .review-card{
+    background:var(--bg-soft);
+    border:3px solid var(--ink);
+    border-radius:14px;
+    padding:26px 22px;
+    text-align:center;
+    text-decoration:none;
+    display:block;
+    box-shadow:5px 5px 0 var(--ink);
+    transition:transform 0.1s ease, box-shadow 0.1s ease;
+  }
+  .review-card:hover{transform:translate(2px,2px); box-shadow:3px 3px 0 var(--ink);}
+  .review-icon{
+    width:52px; height:52px;
+    border-radius:50%;
+    background:var(--coral);
+    color:#FFFFFF;
+    font-weight:900;
+    font-size:20px;
+    display:flex; align-items:center; justify-content:center;
+    margin:0 auto 14px;
+  }
+  .review-card:nth-child(2) .review-icon{background:var(--teal);}
+  .review-card:nth-child(3) .review-icon{background:var(--gold-deep);}
+  .review-title{font-weight:800; font-size:19px; margin-bottom:4px; color:var(--ink);}
+  .review-sub{font-size:15px; color:var(--ink-soft); font-weight:600;}
+
+  /* Contact */
+  .contact-card{
+    background:var(--coral);
+    color:#FFFFFF;
+    border:3px solid var(--ink);
+    border-radius:18px;
+    padding:48px 40px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:24px;
+    box-shadow:10px 10px 0 var(--ink);
+  }
+  .contact-card h2{color:#FFFFFF;}
+  .contact-card .section-intro{color:#FFEBE5; margin-bottom:0; font-weight:600;}
+  .contact-card .section-label{background:var(--ink); color:var(--gold);}
+  .contact-details{font-size:19px; line-height:2; font-weight:700;}
+  .contact-details a{color:#FFFFFF; text-decoration:none; border-bottom:2px solid rgba(255,255,255,0.55);}
+
+  footer{
+    padding:36px 0 52px;
+    text-align:center;
+    color:var(--ink-soft);
+    font-size:15px;
+    font-weight:600;
+  }
+
+  @media (max-width:640px){
+    body{font-size:18px;}
+    h1{font-size:38px;}
+    h2{font-size:28px;}
+    .cols{grid-template-columns:1fr;}
+    .review-grid{grid-template-columns:1fr;}
+    .trust-inner{flex-direction:column;}
+    .contact-card{padding:32px 24px;}
+    thead{display:none;}
+    tbody td{display:block; padding:4px 20px;}
+    tbody tr{display:block; padding:16px 0; border-top:2px dashed var(--line);}
+    tbody td{border-top:none; padding-top:2px; padding-bottom:2px;}
+    td.service{padding-top:16px; font-size:19px;}
+    .btn{font-size:18px; padding:16px 24px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="wordmark">Boulder Tech <span>Companion</span></div>
+    <a class="header-phone" href="tel:+17203408441">Call (720) 340-8441</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <span class="eyebrow">Boulder, Colorado</span>
+    <h1>Relief is one phone call away. <span class="hl">Real help, real fast.</span></h1>
+    <p class="hero-sub">In-home tech help for Boulder families — phones, computers, video calls with grandkids, and staying a step ahead of scams. No jargon, no rushing, and no call center in another time zone.</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="tel:+17203408441">Call (720) 340-8441</a>
+      <a class="btn btn-secondary" href="#services">See services &amp; rates</a>
+    </div>
+  </div>
+</section>
+
+<section class="trust">
+  <div class="wrap trust-inner">
+    <div class="trust-item"><span class="trust-check">&#10003;</span><span><strong>Same technician</strong> every visit</span></div>
+    <div class="trust-item"><span class="trust-check">&#10003;</span><span><strong>Salesforce-certified</strong> systems background</span></div>
+    <div class="trust-item"><span class="trust-check">&#10003;</span><span><strong>Local to Boulder</strong>, not a call center</span></div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <span class="section-label">What it costs</span>
+    <h2>Services &amp; rates</h2>
+    <p class="section-intro">Straightforward pricing, no surprise fees. Family members are always welcome to join by phone so everyone hears the same explanation.</p>
+
+    <div class="card">
+      <div class="card-tab">Service menu <span>Boulder Tech Companion</span></div>
+      <table>
+        <thead>
+          <tr><th>Service</th><th>Rate</th><th>What's included</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="service">In-home visit</td>
+            <td class="rate">$85/hr</td>
+            <td class="note">One hour minimum. Setup, troubleshooting, teaching — phones, computers, tablets, smart home devices, printers, Wi-Fi.</td>
+          </tr>
+          <tr>
+            <td class="service">Remote session</td>
+            <td class="rate">$50/hr</td>
+            <td class="note">Screen-share support for quick fixes, once we've met in person at least once.</td>
+          </tr>
+          <tr>
+            <td class="service">New device setup</td>
+            <td class="rate">$95 flat</td>
+            <td class="note">Unboxing, account setup, transferring photos and contacts, first walkthrough.</td>
+          </tr>
+          <tr>
+            <td class="service">Monthly companion plan</td>
+            <td class="rate">$40/mo</td>
+            <td class="note">One included hour per month, plus text or call access for quick questions in between.</td>
+          </tr>
+          <tr>
+            <td class="service">Scam &amp; safety check</td>
+            <td class="rate">$65 flat</td>
+            <td class="note">Review of email, browser, and phone settings to reduce scam and fraud risk.</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="card-foot">Every visit starts with what's actually frustrating you — not a script.</div>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--bg-soft); border-top:3px solid var(--ink); border-bottom:3px solid var(--ink);">
+  <div class="wrap">
+    <span class="section-label">See for yourself</span>
+    <h2>What people say</h2>
+    <p class="section-intro">Reviews and references from clients who've worked with Eric.</p>
+    <div class="review-grid">
+      <a class="review-card" href="https://www.linkedin.com/in/eric-price/" target="_blank" rel="noopener">
+        <div class="review-icon">in</div>
+        <div class="review-title">LinkedIn</div>
+        <div class="review-sub">Background &amp; experience</div>
+      </a>
+      <a class="review-card" href="https://www.gigsalad.com/magic_at_hand_wheat_ridge" target="_blank" rel="noopener">
+        <div class="review-icon">GS</div>
+        <div class="review-title">GigSalad reviews</div>
+        <div class="review-sub">Client ratings &amp; feedback</div>
+      </a>
+      <a class="review-card" href="https://www.thebash.com/magician/eric-z-price" target="_blank" rel="noopener">
+        <div class="review-icon">TB</div>
+        <div class="review-title">The Bash reviews</div>
+        <div class="review-sub">Client ratings &amp; feedback</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <span class="section-label">Sound familiar?</span>
+    <h2>Common requests</h2>
+    <p class="section-intro">If any of this sounds like your week, that's exactly what a visit is for.</p>
+    <div class="cols">
+      <ul class="plain">
+        <li>Software and app updates that suddenly changed how something looks</li>
+        <li>Email and password troubleshooting, including account lockouts</li>
+        <li>Video calling setup so you can see grandchildren clearly</li>
+      </ul>
+      <ul class="plain">
+        <li>Identifying and avoiding phone and email scams</li>
+        <li>Printer, Wi-Fi router, and smart TV connection problems</li>
+        <li>One-on-one teaching, at whatever speed is comfortable</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--bg-soft); border-top:3px solid var(--ink); border-bottom:3px solid var(--ink);">
+  <div class="wrap">
+    <span class="section-label">Why it's different</span>
+    <h2>Why work with me</h2>
+    <ul class="plain teal" style="max-width:46em; margin-top:24px;">
+      <li>Salesforce-certified systems background, so I actually understand how the software works — not just where the buttons are</li>
+      <li>Local to Boulder, in person, not an overseas call center</li>
+      <li>Same technician every time, so there's continuity and trust</li>
+      <li>No upselling, no commission on products — my only job is to make your tech work for you</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="contact-card">
+      <div>
+        <span class="section-label">Get in touch</span>
+        <h2>Let's sort out your tech.</h2>
+        <p class="section-intro">Referrals welcome from family members, caregivers, and senior living communities.</p>
+      </div>
+      <div class="contact-details">
+        Eric Price — Boulder, Colorado<br>
+        <a href="tel:+17203408441">(720) 340-8441</a><br>
+        <a href="mailto:ericzprice@gmail.com">ericzprice@gmail.com</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  Boulder Tech Companion — patient, in-person tech help.
+</footer>
+
+</body>
+</html>
