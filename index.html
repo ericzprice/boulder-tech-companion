@@ -243,6 +243,13 @@
     display:flex; align-items:center; justify-content:center;
   }
   ul.plain.teal li::before{background:var(--teal); color:#FFFFFF;}
+  ul.plain li a{
+    color:var(--teal-deep);
+    font-weight:800;
+    text-decoration:underline;
+    text-underline-offset:3px;
+  }
+  ul.plain li a:hover{color:var(--coral-deep);}
 
   /* Testimonials / reviews */
   .review-grid{
@@ -446,7 +453,7 @@
     <span class="section-label">Why it's different</span>
     <h2>Why work with me</h2>
     <ul class="plain teal" style="max-width:46em; margin-top:24px;">
-      <li>Salesforce-certified systems background, so I actually understand how the software works — not just where the buttons are</li>
+      <li><a href="https://ericzprice.github.io/salesforce-portfolio/" target="_blank" rel="noopener">Salesforce-certified systems background</a>, so I actually understand how the software works — not just where the buttons are</li>
       <li>Local to Boulder, in person, not an overseas call center</li>
       <li>Same technician every time, so there's continuity and trust</li>
       <li>No upselling, no commission on products — my only job is to make your tech work for you</li>
