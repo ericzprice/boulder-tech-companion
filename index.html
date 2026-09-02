@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Boulder Tech Companion — Patient, in-person tech help</title>
-<meta name="description" content="Patient, in-person help with phones, computers, and everyday tech for Boulder area seniors and their families.">
+<title>New Client Intake — Boulder Tech Companion</title>
+<meta name="description" content="Tell us about your tech needs and we'll get back to you within a day.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700;9..144,900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root{
     --bg:#FFFFFF;
@@ -26,469 +26,284 @@
   *{box-sizing:border-box; margin:0; padding:0;}
   html{scroll-behavior:smooth;}
   body{
-    background:var(--bg);
+    background:var(--bg-soft);
     color:var(--ink);
     font-family:'Inter', -apple-system, sans-serif;
     font-size:20px;
-    line-height:1.65;
+    line-height:1.5;
   }
-  h1,h2,h3{
-    font-family:'Fraunces', serif;
-    font-weight:700;
-    color:var(--ink);
-    line-height:1.1;
-  }
-  a{color:inherit;}
-  .wrap{max-width:960px; margin:0 auto; padding:0 24px;}
+  .wrap{max-width:760px; margin:0 auto; padding:0 24px;}
 
-  /* Header */
-  header{
-    position:sticky; top:0; z-index:20;
-    background:#FFFFFF;
-    border-bottom:3px solid var(--ink);
-  }
-  header .wrap{
-    display:flex; align-items:center; justify-content:space-between;
-    padding-top:18px; padding-bottom:18px;
-  }
-  .wordmark{
-    font-family:'Fraunces', serif;
-    font-size:28px;
-    font-weight:900;
-    letter-spacing:-0.01em;
-    color:var(--teal-deep);
-  }
+  header{background:var(--bg); border-bottom:3px solid var(--ink);}
+  .header-inner{max-width:760px; margin:0 auto; padding:20px 24px; display:flex; align-items:center; justify-content:space-between;}
+  .wordmark{font-weight:800; font-size:24px; color:var(--ink);}
   .wordmark span{color:var(--coral);}
-  .header-phone{
-    font-size:19px;
-    font-weight:800;
-    color:#FFFFFF;
-    background:var(--coral);
-    padding:10px 20px;
-    border-radius:999px;
-    text-decoration:none;
-    white-space:nowrap;
-  }
+  .back-link{color:var(--ink-soft); text-decoration:none; font-weight:600; font-size:16px;}
+  .back-link:hover{color:var(--coral);}
 
-  /* Hero */
-  .hero{
-    padding:64px 0 56px;
-    background:var(--bg-soft);
-    border-bottom:3px solid var(--ink);
-  }
-  .eyebrow{
-    display:inline-block;
-    font-size:16px;
-    font-weight:800;
-    color:#FFFFFF;
-    background:var(--teal-deep);
-    letter-spacing:0.04em;
-    text-transform:uppercase;
-    padding:7px 16px;
-    border-radius:999px;
-    margin-bottom:22px;
-  }
-  h1{
-    font-size:58px;
-    max-width:11.5em;
-    margin-bottom:24px;
-    color:var(--ink);
-  }
-  h1 .hl{color:var(--coral-deep);}
-  .hero-sub{
-    font-size:22px;
-    font-weight:500;
-    color:var(--ink);
-    max-width:32em;
-    margin-bottom:36px;
-  }
-  .cta-row{display:flex; gap:16px; flex-wrap:wrap;}
-  .btn{
-    display:inline-block;
-    padding:18px 32px;
-    border-radius:10px;
-    font-weight:800;
-    font-size:20px;
-    text-decoration:none;
-    border:3px solid var(--ink);
-    box-shadow:5px 5px 0 var(--ink);
-    transition:transform 0.1s ease, box-shadow 0.1s ease;
-  }
-  .btn:hover{transform:translate(2px,2px); box-shadow:3px 3px 0 var(--ink);}
-  .btn-primary{
-    background:var(--coral);
-    color:#FFFFFF;
-  }
-  .btn-secondary{
-    background:var(--gold);
-    color:var(--ink);
-  }
-  .btn-outline{
-    background:#FFFFFF;
-    color:var(--ink);
-  }
+  main{padding:48px 0 80px;}
 
-  /* Trust strip */
-  .trust{
-    background:var(--teal-deep);
-    padding:26px 0;
-    border-bottom:3px solid var(--ink);
-  }
-  .trust-inner{
-    display:flex; flex-wrap:wrap; gap:24px; justify-content:space-between;
-  }
-  .trust-item{
-    display:flex; align-items:center; gap:12px;
-    font-size:18px; color:#FFFFFF; font-weight:600;
-    flex:1; min-width:230px;
-  }
-  .trust-check{
-    width:28px; height:28px; border-radius:50%;
-    background:var(--gold);
-    color:var(--ink);
-    flex-shrink:0;
-    display:flex; align-items:center; justify-content:center;
-    font-weight:900; font-size:16px;
-  }
-  .trust-item strong{color:#FFFFFF; font-weight:800;}
-
-  /* Section generic */
-  section{padding:68px 0;}
+  .intro{margin-bottom:36px;}
   .section-label{
-    display:inline-block;
-    font-size:15px;
-    font-weight:800;
-    color:#FFFFFF;
-    background:var(--coral-deep);
-    text-transform:uppercase;
-    letter-spacing:0.04em;
-    padding:6px 14px;
-    border-radius:6px;
-    margin-bottom:14px;
+    display:inline-block; background:var(--teal-deep); color:#FFFFFF;
+    font-weight:700; font-size:13px; letter-spacing:.04em; text-transform:uppercase;
+    padding:6px 14px; border-radius:999px; margin-bottom:16px;
   }
-  h2{font-size:38px; margin-bottom:10px;}
-  .section-intro{color:var(--ink-soft); max-width:38em; margin-bottom:36px; font-size:19px; font-weight:500;}
+  h1{font-size:clamp(30px,5vw,42px); line-height:1.1; margin-bottom:14px;}
+  .intro p{color:var(--ink-soft); font-size:19px; max-width:60ch;}
 
-  /* Index card - services */
   .card{
     background:var(--card);
     border:3px solid var(--ink);
     border-radius:16px;
     box-shadow:8px 8px 0 var(--gold);
-    overflow:hidden;
+    padding:36px;
+    margin-top:8px;
   }
-  .card-tab{
-    background:var(--teal-deep);
-    color:#FFFFFF;
-    font-family:'Fraunces', serif;
-    font-size:19px;
-    font-weight:700;
-    padding:16px 28px;
-    display:flex; align-items:center; justify-content:space-between;
-  }
-  .card-tab span{opacity:0.85; font-family:'Inter',sans-serif; font-size:13px; font-weight:600;}
-  table{width:100%; border-collapse:collapse;}
-  thead th{
-    text-align:left;
-    font-size:13px;
-    text-transform:uppercase;
-    letter-spacing:0.04em;
-    color:var(--ink-soft);
-    font-weight:800;
-    padding:16px 28px 10px;
-  }
-  tbody td{
-    padding:18px 28px;
-    border-top:2px dashed var(--line);
-    font-size:18px;
-    vertical-align:top;
-  }
-  td.service{font-weight:800; width:32%; color:var(--ink);}
-  td.rate{color:var(--coral-deep); font-weight:800; font-size:20px; white-space:nowrap; width:18%;}
-  td.note{color:var(--ink-soft); font-size:16px;}
-  .card-foot{
-    padding:18px 28px 24px;
-    font-size:15px;
-    color:var(--ink-soft);
-    font-weight:600;
-    font-style:italic;
-    border-top:2px dashed var(--line);
+  @media (max-width:600px){ .card{padding:24px;} }
+
+  fieldset{border:none; margin-bottom:28px;}
+  fieldset:last-of-type{margin-bottom:0;}
+  legend{
+    font-weight:700; font-size:18px; color:var(--ink);
+    padding-bottom:6px; margin-bottom:18px; width:100%;
+    border-bottom:2px solid var(--line);
   }
 
-  /* Two column lists */
-  .cols{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:40px;
-  }
-  ul.plain{list-style:none;}
-  ul.plain li{
-    position:relative;
-    padding-left:32px;
-    margin-bottom:16px;
-    font-size:18px;
-    font-weight:500;
+  label{display:block; font-weight:600; font-size:17px; margin-bottom:6px; margin-top:20px;}
+  label:first-of-type{margin-top:0;}
+  label .req{color:var(--coral); margin-left:2px;}
+  label .hint{display:block; font-weight:400; font-size:15px; color:var(--ink-soft); margin-top:2px;}
+
+  input[type="text"], input[type="email"], input[type="tel"], textarea, select{
+    width:100%;
+    font-family:inherit;
+    font-size:17px;
     color:var(--ink);
+    background:#FFFFFF;
+    border:2px solid var(--line);
+    border-radius:8px;
+    padding:12px 14px;
+    margin-top:6px;
   }
-  ul.plain li::before{
-    content:"✓";
-    position:absolute;
-    left:0; top:0;
-    width:22px; height:22px;
-    border-radius:50%;
-    background:var(--gold);
-    color:var(--ink);
-    font-size:13px;
-    font-weight:900;
-    display:flex; align-items:center; justify-content:center;
+  input:focus, textarea:focus, select:focus{
+    outline:none; border-color:var(--teal); box-shadow:0 0 0 3px rgba(15,122,87,.15);
   }
-  ul.plain.teal li::before{background:var(--teal); color:#FFFFFF;}
-  ul.plain li a{
-    color:var(--teal-deep);
-    font-weight:800;
-    text-decoration:underline;
-    text-underline-offset:3px;
-  }
-  ul.plain li a:hover{color:var(--coral-deep);}
+  textarea{resize:vertical; min-height:90px;}
 
-  /* Testimonials / reviews */
-  .review-grid{
-    display:grid;
-    grid-template-columns:repeat(3, 1fr);
-    gap:20px;
-  }
-  .review-card{
-    background:var(--bg-soft);
-    border:3px solid var(--ink);
-    border-radius:14px;
-    padding:26px 22px;
-    text-align:center;
-    text-decoration:none;
-    display:block;
-    box-shadow:5px 5px 0 var(--ink);
-    transition:transform 0.1s ease, box-shadow 0.1s ease;
-  }
-  .review-card:hover{transform:translate(2px,2px); box-shadow:3px 3px 0 var(--ink);}
-  .review-icon{
-    width:52px; height:52px;
-    border-radius:50%;
-    background:var(--coral);
-    color:#FFFFFF;
-    font-weight:900;
-    font-size:20px;
-    display:flex; align-items:center; justify-content:center;
-    margin:0 auto 14px;
-  }
-  .review-card:nth-child(2) .review-icon{background:var(--teal);}
-  .review-card:nth-child(3) .review-icon{background:var(--gold-deep);}
-  .review-title{font-weight:800; font-size:19px; margin-bottom:4px; color:var(--ink);}
-  .review-sub{font-size:15px; color:var(--ink-soft); font-weight:600;}
+  .row{display:flex; gap:14px; flex-wrap:wrap;}
+  .row > div{flex:1; min-width:140px;}
 
-  /* Contact */
-  .contact-card{
-    background:var(--coral);
-    color:#FFFFFF;
-    border:3px solid var(--ink);
-    border-radius:18px;
-    padding:48px 40px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    flex-wrap:wrap;
-    gap:24px;
-    box-shadow:10px 10px 0 var(--ink);
-  }
-  .contact-card h2{color:#FFFFFF;}
-  .contact-card .section-intro{color:#FFEBE5; margin-bottom:0; font-weight:600;}
-  .contact-card .section-label{background:var(--ink); color:var(--gold);}
-  .contact-details{font-size:19px; line-height:2; font-weight:700;}
-  .contact-details a{color:#FFFFFF; text-decoration:none; border-bottom:2px solid rgba(255,255,255,0.55);}
+  .check-group{display:flex; flex-direction:column; gap:10px; margin-top:8px;}
+  .check-item{display:flex; align-items:center; gap:10px; font-weight:500; font-size:17px;}
+  .check-item input{width:20px; height:20px; margin:0; accent-color:var(--teal);}
 
-  footer{
-    padding:36px 0 52px;
-    text-align:center;
-    color:var(--ink-soft);
-    font-size:15px;
-    font-weight:600;
-  }
+  .radio-group{display:flex; flex-direction:column; gap:10px; margin-top:8px;}
+  .radio-item{display:flex; align-items:center; gap:10px; font-weight:500; font-size:17px;}
+  .radio-item input{width:20px; height:20px; margin:0; accent-color:var(--teal);}
 
-  @media (max-width:640px){
-    body{font-size:18px;}
-    h1{font-size:38px;}
-    h2{font-size:28px;}
-    .cols{grid-template-columns:1fr;}
-    .review-grid{grid-template-columns:1fr;}
-    .trust-inner{flex-direction:column;}
-    .contact-card{padding:32px 24px;}
-    thead{display:none;}
-    tbody td{display:block; padding:4px 20px;}
-    tbody tr{display:block; padding:16px 0; border-top:2px dashed var(--line);}
-    tbody td{border-top:none; padding-top:2px; padding-bottom:2px;}
-    td.service{padding-top:16px; font-size:19px;}
-    .btn{font-size:18px; padding:16px 24px;}
+  select{appearance:none; background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%233E5163' stroke-width='2.5'><polyline points='6 9 12 15 18 9'/></svg>"); background-repeat:no-repeat; background-position:right 14px center;}
+
+  .submit-row{margin-top:32px;}
+  .btn{
+    display:inline-block; width:100%; text-align:center;
+    padding:18px 32px; border-radius:10px; font-weight:800; font-size:20px;
+    text-decoration:none; border:3px solid var(--ink); box-shadow:5px 5px 0 var(--ink);
+    background:var(--coral); color:#FFFFFF; cursor:pointer;
+    font-family:inherit;
   }
+  .btn:hover{transform:translate(2px,2px); box-shadow:3px 3px 0 var(--ink);}
+
+  .privacy-note{color:var(--ink-soft); font-size:14px; margin-top:16px; text-align:center;}
+
+  .success-card{
+    display:none;
+    background:var(--card); border:3px solid var(--ink); border-radius:16px;
+    box-shadow:8px 8px 0 var(--teal); padding:44px 36px; text-align:center;
+  }
+  .success-card h2{font-size:28px; margin-bottom:12px;}
+  .success-card p{color:var(--ink-soft); font-size:18px;}
+
+  footer{border-top:3px solid var(--ink); background:var(--bg); padding:28px 0; text-align:center;}
+  footer p{color:var(--ink-soft); font-size:15px;}
+  footer a{color:var(--coral); font-weight:600; text-decoration:none;}
 </style>
 </head>
 <body>
 
 <header>
-  <div class="wrap">
+  <div class="header-inner">
     <div class="wordmark">Boulder Tech <span>Companion</span></div>
-    <a class="header-phone" href="tel:+17203408441">Call (720) 340-8441</a>
+    <a class="back-link" href="/">&larr; Back to site</a>
   </div>
 </header>
 
-<section class="hero">
+<main>
   <div class="wrap">
-    <span class="eyebrow">Boulder, Colorado</span>
-    <h1>Relief is one phone call away. <span class="hl">Real help, real fast.</span></h1>
-    <p class="hero-sub">In-home tech help for Boulder families — phones, computers, video calls with grandkids, and staying a step ahead of scams. No jargon, no rushing, and no call center in another time zone.</p>
-    <div class="cta-row">
-      <a class="btn btn-primary" href="tel:+17203408441">Call (720) 340-8441</a>
-      <a class="btn btn-secondary" href="#services">See services &amp; rates</a>
+
+    <div class="intro">
+      <span class="section-label">Get started</span>
+      <h1>Tell us what's going on.</h1>
+      <p>Fill this out for yourself or on behalf of a parent or family member. We'll follow up within a day to schedule a visit — no pressure, no obligation.</p>
     </div>
-  </div>
-</section>
 
-<section class="trust">
-  <div class="wrap trust-inner">
-    <div class="trust-item"><span class="trust-check">&#10003;</span><span><strong>Same technician</strong> every visit</span></div>
-    <div class="trust-item"><span class="trust-check">&#10003;</span><span><strong>Salesforce-certified</strong> systems background</span></div>
-    <div class="trust-item"><span class="trust-check">&#10003;</span><span><strong>Local to Boulder</strong>, not a call center</span></div>
-  </div>
-</section>
+    <form class="card" id="intake-form" action="https://formspree.io/f/xppzrwoj" method="POST">
 
-<section id="services">
-  <div class="wrap">
-    <span class="section-label">What it costs</span>
-    <h2>Services &amp; rates</h2>
-    <p class="section-intro">Straightforward pricing, no surprise fees. Family members are always welcome to join by phone so everyone hears the same explanation.</p>
+      <fieldset>
+        <legend>Who we're talking to</legend>
 
-    <div class="card">
-      <div class="card-tab">Service menu <span>Boulder Tech Companion</span></div>
-      <table>
-        <thead>
-          <tr><th>Service</th><th>Rate</th><th>What's included</th></tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td class="service">In-home visit</td>
-            <td class="rate">$85/hr</td>
-            <td class="note">One hour minimum. Setup, troubleshooting, teaching — phones, computers, tablets, smart home devices, printers, Wi-Fi.</td>
-          </tr>
-          <tr>
-            <td class="service">Remote session</td>
-            <td class="rate">$50/hr</td>
-            <td class="note">Screen-share support for quick fixes, once we've met in person at least once.</td>
-          </tr>
-          <tr>
-            <td class="service">New device setup</td>
-            <td class="rate">$95 flat</td>
-            <td class="note">Unboxing, account setup, transferring photos and contacts, first walkthrough.</td>
-          </tr>
-          <tr>
-            <td class="service">Monthly companion plan</td>
-            <td class="rate">$40/mo</td>
-            <td class="note">One included hour per month, plus text or call access for quick questions in between.</td>
-          </tr>
-          <tr>
-            <td class="service">Scam &amp; safety check</td>
-            <td class="rate">$65 flat</td>
-            <td class="note">Review of email, browser, and phone settings to reduce scam and fraud risk.</td>
-          </tr>
-        </tbody>
-      </table>
-      <div class="card-foot">Every visit starts with what's actually frustrating you — not a script.</div>
-    </div>
-  </div>
-</section>
+        <label for="requester_name">Your name <span class="req">*</span></label>
+        <input type="text" id="requester_name" name="Your name" required>
 
-<section style="background:var(--bg-soft); border-top:3px solid var(--ink); border-bottom:3px solid var(--ink);">
-  <div class="wrap">
-    <span class="section-label">See for yourself</span>
-    <h2>What people say</h2>
-    <p class="section-intro">Reviews and references from clients who've worked with Eric.</p>
-    <div class="review-grid">
-      <a class="review-card" href="https://www.linkedin.com/in/eric-price/" target="_blank" rel="noopener">
-        <div class="review-icon">in</div>
-        <div class="review-title">LinkedIn</div>
-        <div class="review-sub">Background &amp; experience</div>
-      </a>
-      <a class="review-card" href="https://www.gigsalad.com/magic_at_hand_wheat_ridge" target="_blank" rel="noopener">
-        <div class="review-icon">GS</div>
-        <div class="review-title">GigSalad reviews</div>
-        <div class="review-sub">Client ratings &amp; feedback</div>
-      </a>
-      <a class="review-card" href="https://www.thebash.com/magician/eric-z-price" target="_blank" rel="noopener">
-        <div class="review-icon">TB</div>
-        <div class="review-title">The Bash reviews</div>
-        <div class="review-sub">Client ratings &amp; feedback</div>
-      </a>
-    </div>
-  </div>
-</section>
+        <label for="relationship">Your relationship to the client <span class="req">*</span></label>
+        <select id="relationship" name="Relationship to client" required>
+          <option value="" disabled selected>Choose</option>
+          <option>Self</option>
+          <option>Adult child</option>
+          <option>Other family member</option>
+          <option>Caregiver</option>
+        </select>
 
-<section>
-  <div class="wrap">
-    <span class="section-label">Sound familiar?</span>
-    <h2>Common requests</h2>
-    <p class="section-intro">If any of this sounds like your week, that's exactly what a visit is for.</p>
-    <div class="cols">
-      <ul class="plain">
-        <li>Software and app updates that suddenly changed how something looks</li>
-        <li>Email and password troubleshooting, including account lockouts</li>
-        <li>Video calling setup so you can see grandchildren clearly</li>
-      </ul>
-      <ul class="plain">
-        <li>Identifying and avoiding phone and email scams</li>
-        <li>Printer, Wi-Fi router, and smart TV connection problems</li>
-        <li>One-on-one teaching, at whatever speed is comfortable</li>
-      </ul>
-    </div>
-  </div>
-</section>
+        <label for="client_name">Client's name (if different from above)</label>
+        <input type="text" id="client_name" name="Client name">
 
-<section style="background:var(--bg-soft); border-top:3px solid var(--ink); border-bottom:3px solid var(--ink);">
-  <div class="wrap">
-    <span class="section-label">Why it's different</span>
-    <h2>Why work with me</h2>
-    <div style="display:flex; gap:32px; flex-wrap:wrap; align-items:flex-start; margin-top:20px;">
-      <img src="eric-price.jpg" alt="Eric Price, founder of Boulder Tech Companion" width="220" height="214" style="border-radius:16px; border:3px solid var(--ink); object-fit:cover; flex-shrink:0;">
-      <div style="flex:1; min-width:280px;">
-        <p class="section-intro" style="max-width:46em; margin-top:0;">Eric Price founded Boulder Tech Companion after six years as a Systems Engineer at Salesforce, where he earned three Salesforce certifications building and troubleshooting business-critical systems. He holds a Bachelor's degree in Computer Science and graduated from Codecraft coding school in 2017 — pairing formal theory with hands-on, production-ready coding skills.</p>
-        <p class="section-intro" style="max-width:46em;">Eric is currently pursuing his CompTIA A+ certification to deepen his hardware and device-level troubleshooting expertise, and he regularly consults with friends working in cybersecurity to stay current on the latest scam tactics and defense strategies.</p>
-        <p class="section-intro" style="max-width:46em;">That combination — enterprise systems experience, hands-on technical training, and a direct line to cybersecurity expertise — is what makes Boulder Tech Companion different: not just tech help, but tech help grounded in the same rigor used to protect large-scale business systems, now applied to protecting individuals and families from scams.</p>
+        <div class="row">
+          <div>
+            <label for="phone">Best phone number <span class="req">*</span></label>
+            <input type="tel" id="phone" name="Phone" required>
+          </div>
+          <div>
+            <label for="email">Email <span class="req">*</span></label>
+            <input type="email" id="email" name="Email" required>
+          </div>
+        </div>
+
+        <label for="contact_method">Preferred contact method <span class="req">*</span></label>
+        <select id="contact_method" name="Preferred contact method" required>
+          <option value="" disabled selected>Choose</option>
+          <option>Call</option>
+          <option>Text</option>
+          <option>Email</option>
+        </select>
+      </fieldset>
+
+      <fieldset>
+        <legend>What's going on</legend>
+
+        <label for="service">What service are you interested in? <span class="req">*</span></label>
+        <select id="service" name="Service" required>
+          <option value="" disabled selected>Choose</option>
+          <option>In-home visit</option>
+          <option>Remote session</option>
+          <option>New device setup</option>
+          <option>Monthly companion plan</option>
+          <option>Scam & safety check</option>
+          <option>Not sure yet</option>
+        </select>
+
+        <label>What device(s) or system(s) need help? <span class="req">*</span></label>
+        <div class="check-group">
+          <label class="check-item"><input type="checkbox" name="Devices" value="Computer"> Computer</label>
+          <label class="check-item"><input type="checkbox" name="Devices" value="Phone"> Phone</label>
+          <label class="check-item"><input type="checkbox" name="Devices" value="Tablet"> Tablet</label>
+          <label class="check-item"><input type="checkbox" name="Devices" value="Wi-Fi/Router"> Wi-Fi / Router</label>
+          <label class="check-item"><input type="checkbox" name="Devices" value="Smart home device"> Smart home device</label>
+          <label class="check-item"><input type="checkbox" name="Devices" value="Printer"> Printer</label>
+          <label class="check-item"><input type="checkbox" name="Devices" value="Other"> Other</label>
+        </div>
+
+        <label for="issue">Tell us what's going on <span class="req">*</span>
+          <span class="hint">The more detail, the better we can prepare before the visit.</span>
+        </label>
+        <textarea id="issue" name="Issue description" required></textarea>
+      </fieldset>
+
+      <fieldset>
+        <legend>Where to meet you</legend>
+
+        <label for="street">Street address <span class="req">*</span></label>
+        <input type="text" id="street" name="Street address" required>
+
+        <div class="row">
+          <div>
+            <label for="city">City <span class="req">*</span></label>
+            <input type="text" id="city" name="City" required>
+          </div>
+          <div>
+            <label for="zip">Zip code <span class="req">*</span></label>
+            <input type="text" id="zip" name="Zip code" required inputmode="numeric" pattern="[0-9]*">
+          </div>
+        </div>
+
+        <label for="best_time">Best days/times to reach you or schedule</label>
+        <input type="text" id="best_time" name="Best time to reach" placeholder="e.g. weekday mornings">
+
+        <label for="notes">Anything we should know before the visit?
+          <span class="hint">Mobility needs, hearing concerns, best entrance to use, pets, etc.</span>
+        </label>
+        <textarea id="notes" name="Additional notes"></textarea>
+      </fieldset>
+
+      <fieldset>
+        <legend>One last thing</legend>
+
+        <label for="heard">How did you hear about Boulder Tech Companion?</label>
+        <select id="heard" name="Referral source">
+          <option value="" disabled selected>Choose</option>
+          <option>Referral</option>
+          <option>Senior center or community talk</option>
+          <option>Google search</option>
+          <option>Nextdoor</option>
+          <option>Newspaper</option>
+          <option>Other</option>
+        </select>
+      </fieldset>
+
+      <div class="submit-row">
+        <button type="submit" class="btn">Send my request</button>
+        <p class="privacy-note">We'll never share your information. It's used only to prepare for your visit.</p>
       </div>
-    </div>
-    <ul class="plain teal" style="max-width:46em; margin-top:24px;">
-      <li><a href="https://ericzprice.github.io/salesforce-portfolio/" target="_blank" rel="noopener">Salesforce-certified systems background</a>, so I actually understand how the software works — not just where the buttons are</li>
-      <li>Local to Boulder, in person, not an overseas call center</li>
-      <li>Same technician every time, so there's continuity and trust</li>
-      <li>No upselling, no commission on products — my only job is to make your tech work for you</li>
-    </ul>
-  </div>
-</section>
+    </form>
 
-<section>
-  <div class="wrap">
-    <div class="contact-card">
-      <div>
-        <span class="section-label">Get in touch</span>
-        <h2>Let's sort out your tech.</h2>
-        <p class="section-intro">Referrals welcome from family members, caregivers, and senior living communities.</p>
-      </div>
-      <div class="contact-details">
-        Eric Price — Boulder, Colorado<br>
-        <a href="tel:+17203408441">(720) 340-8441</a><br>
-        <a href="mailto:ericzprice@gmail.com">ericzprice@gmail.com</a>
-      </div>
+    <div class="success-card" id="success-card">
+      <h2>Thank you — got it!</h2>
+      <p>We'll follow up within a day to schedule your visit. If it's urgent, feel free to call <strong>(720) 340-8441</strong> directly.</p>
     </div>
+
   </div>
-</section>
+</main>
 
 <footer>
-  Boulder Tech Companion — patient, in-person tech help.
+  <div class="wrap">
+    <p>Boulder Tech Companion — patient, in-person tech help.<br>
+    <a href="tel:+17203408441">(720) 340-8441</a> &middot; <a href="mailto:ericzprice@gmail.com">ericzprice@gmail.com</a></p>
+  </div>
 </footer>
+
+<script>
+  const form = document.getElementById('intake-form');
+  const successCard = document.getElementById('success-card');
+  form.addEventListener('submit', async function(e){
+    e.preventDefault();
+    const data = new FormData(form);
+    try{
+      const res = await fetch(form.action, {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      });
+      if(res.ok){
+        form.style.display = 'none';
+        successCard.style.display = 'block';
+        successCard.scrollIntoView({behavior:'smooth'});
+      } else {
+        alert("Something went wrong sending your request. Please call (720) 340-8441 or email ericzprice@gmail.com directly.");
+      }
+    } catch(err){
+      alert("Something went wrong sending your request. Please call (720) 340-8441 or email ericzprice@gmail.com directly.");
+    }
+  });
+</script>
 
 </body>
 </html>
